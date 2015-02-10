@@ -24,4 +24,11 @@ concerns.
 
 There are some minor differences in function names/etc between this
 and the non-native Glitter implementation, as the native implementation mirrors
-the HTML canvas element API as closely as possible.
+the HTML canvas element API as closely as possible. Additionally, the native
+implementation currently only allows drawing on background (no onContent).
+
+Both button-demo and text-demo manually animate the "shapes" being painted
+by updating, redrawing, sleeping for frame length, and repeating, as for now,
+the sizes, positions, etc of the shapes (ripples for button, rectangles for
+text) need to be global so that they can be accessed within the custom paint
+function. Ideally this can be replaced with custom properties in the future.
